@@ -126,7 +126,7 @@ export default function LandingPage() {
               opacity: 0,
             }}
           >
-            Clásico. Premium. Editorial. Experimenta el nivel más alto de precisión, cuidado y estilo en cada corte.
+            Estudio Privado de Barbería Profesional. Una experiencia de altísimo nivel donde la precisión técnica y el estilo convergen.
           </p>
           
           {/* Buttons animated fade-in */}
