@@ -89,6 +89,17 @@ h1, h2, h3, h4, h5, h6 {
   50% { transform: translateY(-12px); }
 }
 
+/* Premium Text Reveal */
+@keyframes text-reveal-up {
+  0% { transform: translateY(120%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
 /* Grain texture overlay */
 @keyframes grain-shift {
   0%, 100% { transform: translate(0, 0); }

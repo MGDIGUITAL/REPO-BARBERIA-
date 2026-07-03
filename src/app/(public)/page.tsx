@@ -77,24 +77,64 @@ export default function LandingPage() {
             />
           </div>
 
-          {/* Gothic headline using tipo pro typography */}
-          <h1 className="font-gothic text-5xl md:text-7xl text-gold-gradient mb-3 leading-tight tracking-wide">
-            Gold Barber
+          {/* Massive Gothic headline with letter-by-letter reveal */}
+          <h1 className="flex flex-wrap justify-center overflow-hidden mb-2">
+            {"Gold Barber".split("").map((char, i) => (
+              <span
+                key={i}
+                className="font-gothic text-7xl md:text-[10vw] lg:text-[11vw] text-gold-gradient leading-none tracking-tight inline-block drop-shadow-2xl"
+                style={{
+                  animation: 'text-reveal-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                  animationDelay: `${i * 0.08}s`,
+                  opacity: 0,
+                  transform: 'translateY(120%)'
+                }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
           </h1>
-          <span className="block text-gb-gold text-xl md:text-2xl font-cormorant italic font-light tracking-[0.4em] uppercase mb-6"
-            style={{ fontFamily: 'var(--font-cormorant)' }}>
-            Studio
-          </span>
 
-          <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
+          {/* Subtitle in Tipo Pro (Gothic) as requested */}
+          <div className="overflow-hidden mb-10 mt-2">
+            <span 
+              className="block font-gothic text-4xl md:text-6xl text-gb-gold drop-shadow-xl"
+              style={{
+                animation: 'text-reveal-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                animationDelay: '0.8s',
+                opacity: 0,
+                transform: 'translateY(120%)'
+              }}
+            >
+              Studio
+            </span>
+          </div>
+
+          {/* Paragraph animated fade-in */}
+          <p 
+            className="text-lg md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light tracking-wider leading-relaxed"
+            style={{
+              animation: 'fade-in-up 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              animationDelay: '1.2s',
+              opacity: 0,
+            }}
+          >
             Clásico. Premium. Editorial. Experimenta el nivel más alto de precisión, cuidado y estilo en cada corte.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a href="#reservas" className="px-10 py-4 bg-gb-gold text-gb-bg font-bold uppercase tracking-[0.2em] text-sm hover:bg-white transition-colors w-full sm:w-auto">
+          {/* Buttons animated fade-in */}
+          <div 
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full"
+            style={{
+              animation: 'fade-in-up 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              animationDelay: '1.5s',
+              opacity: 0,
+            }}
+          >
+            <a href="#reservas" className="px-10 py-4 bg-gb-gold text-gb-bg font-bold uppercase tracking-[0.2em] text-sm hover:bg-white transition-colors w-full sm:w-auto text-center">
               Agendar Cita
             </a>
-            <a href="#servicios" className="px-10 py-4 border border-gb-muted text-gb-text font-bold uppercase tracking-[0.2em] text-sm hover:border-gb-gold hover:text-gb-gold transition-colors w-full sm:w-auto">
+            <a href="#servicios" className="px-10 py-4 border border-gb-muted text-gb-text font-bold uppercase tracking-[0.2em] text-sm hover:border-gb-gold hover:text-gb-gold transition-colors w-full sm:w-auto text-center">
               Ver Servicios
             </a>
           </div>
