@@ -2,6 +2,7 @@ import ServiceCatalog from "@/components/public/ServiceCatalog";
 import ProductCatalog from "@/components/public/ProductCatalog";
 import BookingFlow from "@/components/public/BookingFlow";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function LandingPage() {
   return (
@@ -10,14 +11,17 @@ export default function LandingPage() {
       {/* HEADER / NAVIGATION */}
       <header className="fixed top-0 w-full z-50 bg-gb-bg/80 backdrop-blur-md border-b border-white/5 transition-all">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 flex items-center justify-center border border-gb-gold">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gb-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
-            </div>
-            <span className="font-bold tracking-widest uppercase text-lg">
-              Gold<span className="text-gb-gold">Barber</span>
-            </span>
-          </div>
+          {/* Logo image replacing text */}
+          <a href="#" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Gold Barber Studio"
+              width={56}
+              height={56}
+              className="logo-glow rounded-full object-contain"
+              priority
+            />
+          </a>
           
           <nav className="hidden md:flex gap-8 text-sm font-medium tracking-widest uppercase text-gray-400">
             <a href="#servicios" className="hover:text-gb-gold transition-colors">Servicios</a>
@@ -54,14 +58,33 @@ export default function LandingPage() {
           <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%)' }} />
         </div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
-          <div className="inline-block mb-6 px-4 py-1 border border-gb-gold/30 text-gb-gold text-xs uppercase tracking-[0.3em]">
-            Estudio Exclusivo
+        <div className="relative z-10 text-center max-w-4xl mx-auto pt-20 flex flex-col items-center">
+          {/* LOGO — large, centered, floating */}
+          <div
+            style={{
+              animation: 'float-up 5s ease-in-out infinite',
+            }}
+            className="mb-10"
+          >
+            <Image
+              src="/logo.png"
+              alt="Gold Barber Studio Logo"
+              width={260}
+              height={260}
+              className="logo-glow rounded-full object-contain mx-auto"
+              priority
+            />
           </div>
-          <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-6 leading-none">
-            <span className="block text-gb-text">GOLD BARBER</span>
-            <span className="block text-gb-gold italic font-serif mt-2 font-light">STUDIO</span>
+
+          {/* Gothic headline using tipo pro typography */}
+          <h1 className="font-gothic text-5xl md:text-7xl text-gold-gradient mb-3 leading-tight tracking-wide">
+            Gold Barber
           </h1>
+          <span className="block text-gb-gold text-xl md:text-2xl font-cormorant italic font-light tracking-[0.4em] uppercase mb-6"
+            style={{ fontFamily: 'var(--font-cormorant)' }}>
+            Studio
+          </span>
+
           <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
             Clásico. Premium. Editorial. Experimenta el nivel más alto de precisión, cuidado y estilo en cada corte.
           </p>
@@ -121,12 +144,16 @@ export default function LandingPage() {
       <footer className="pt-24 pb-12 border-t border-white/5 bg-[#050607]">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-6 h-6 flex items-center justify-center border border-gb-gold">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gb-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
-              </div>
-              <span className="font-bold tracking-widest uppercase text-md">
-                Gold<span className="text-gb-gold">Barber</span>
+            <div className="flex items-center gap-3 mb-6">
+              <Image
+                src="/logo.png"
+                alt="Gold Barber Studio"
+                width={48}
+                height={48}
+                className="logo-glow rounded-full object-contain"
+              />
+              <span className="font-gothic text-lg text-gb-gold" style={{ fontFamily: 'var(--font-gothic)' }}>
+                Gold Barber
               </span>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs font-light">
