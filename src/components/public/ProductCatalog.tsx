@@ -13,8 +13,11 @@ export default function ProductCatalog() {
       <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-widest text-gb-text mb-4">
-              Boutique <span className="text-gb-gold italic font-serif lowercase">Premium</span>
+            <h2 className="text-4xl md:text-6xl text-gb-text mb-4 tracking-wide flex flex-col items-start gap-1" style={{ fontFamily: 'var(--font-tall)' }}>
+              <span className="uppercase tracking-widest font-bold">Boutique</span>
+              <span className="text-gb-gold text-5xl md:text-7xl lowercase drop-shadow-md -mt-4 pr-4" style={{ fontFamily: 'var(--font-script)' }}>
+                premium
+              </span>
             </h2>
             <div className="w-12 h-[1px] bg-gb-gold mb-6"></div>
             <p className="text-gray-400 font-light tracking-wide max-w-md">

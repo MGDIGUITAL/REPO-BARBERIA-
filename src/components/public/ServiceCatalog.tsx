@@ -82,8 +82,11 @@ export default function ServiceCatalog() {
           <span className="text-[10px] uppercase tracking-[0.5em] text-gb-gold/70 mb-4">
             ✦ El Menú ✦
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-widest text-white mb-6">
-            Nuestros <span className="text-gb-gold italic font-serif lowercase drop-shadow-md">Servicios</span>
+          <h2 className="text-4xl md:text-6xl text-white mb-6 tracking-wide flex flex-col md:flex-row items-center gap-2 md:gap-6 justify-center" style={{ fontFamily: 'var(--font-tall)' }}>
+            <span className="uppercase tracking-widest font-bold">Nuestros</span>
+            <span className="text-gb-gold text-5xl md:text-7xl lowercase drop-shadow-md -mt-2 md:mt-1 pr-4" style={{ fontFamily: 'var(--font-script)' }}>
+              servicios
+            </span>
           </h2>
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-gb-gold to-transparent mb-6" />
           <p className="text-gray-400 font-light tracking-wide max-w-lg text-sm md:text-base leading-relaxed">
