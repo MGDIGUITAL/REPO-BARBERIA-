@@ -30,7 +30,7 @@ export default function ProductCatalog() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-black border-t border-gb-muted overflow-hidden">
+    <section ref={sectionRef} className="py-24 px-6 bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="flex-1">
