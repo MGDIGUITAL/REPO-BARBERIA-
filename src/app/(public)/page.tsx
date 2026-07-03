@@ -33,10 +33,25 @@ export default function LandingPage() {
 
       {/* HERO SECTION */}
       <section className="relative min-h-[100svh] flex items-center justify-center px-4 overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-b from-gb-bg/90 via-gb-bg/60 to-gb-bg" />
+        {/* Background Video with Overlay */}
+        <div className="absolute inset-0 z-0 bg-black">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            style={{ filter: 'grayscale(30%) contrast(1.1)' }}
+          >
+            <source src="https://res.cloudinary.com/ddqx435i5/video/upload/q_auto,f_auto/Dise%C3%B1o_sin_t%C3%ADtulo_zqeq4q.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/ddqx435i5/video/upload/q_auto,f_webm/Dise%C3%B1o_sin_t%C3%ADtulo_zqeq4q.webm" type="video/webm" />
+          </video>
+          {/* Cinematic dark overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+          {/* Gradient fade to page color */}
+          <div className="absolute inset-0 bg-gradient-to-b from-gb-bg/70 via-transparent to-gb-bg" />
+          {/* Subtle vignette effect */}
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%)' }} />
         </div>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">

@@ -4,11 +4,17 @@
   /* =========================================
      THEME: GOLD BARBER STUDIO (Public Landing)
      Aesthetic: Premium, Classic, Editorial
+     Palette extracted from logo: Gold + Deep Purple + Black
      ========================================= */
   --gb-background: #090A0B; /* Deep Black */
   --gb-foreground: #F5F1E8; /* Warm White/Cream */
   --gb-primary: #C69B45;    /* Classic Gold */
+  --gb-gold-light: #E8C972; /* Light Gold highlight */
+  --gb-gold-dark: #8B6914;  /* Deep Gold shadow */
+  --gb-purple: #2D1854;     /* Deep Purple (from logo accent) */
+  --gb-purple-light: #4A2D7A; /* Purple accent */
   --gb-muted: #2A2C30;      /* Subtle border/card */
+  --gb-surface: #0E0F12;    /* Card/surface */
 
   /* =========================================
      THEME: PRO BARBERSHOP SYSTEM (Dashboard)
@@ -25,7 +31,12 @@
   --color-gb-bg: var(--gb-background);
   --color-gb-text: var(--gb-foreground);
   --color-gb-gold: var(--gb-primary);
+  --color-gb-gold-light: var(--gb-gold-light);
+  --color-gb-gold-dark: var(--gb-gold-dark);
+  --color-gb-purple: var(--gb-purple);
+  --color-gb-purple-light: var(--gb-purple-light);
   --color-gb-muted: var(--gb-muted);
+  --color-gb-surface: var(--gb-surface);
 
   --color-pbs-bg: var(--pbs-background);
   --color-pbs-text: var(--pbs-foreground);
@@ -33,7 +44,9 @@
   --color-pbs-surface: var(--pbs-surface);
   --color-pbs-border: var(--pbs-border);
 
-  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-cormorant);
+  --font-body: var(--font-montserrat);
+  --font-sans: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -41,12 +54,83 @@
 body {
   background: var(--gb-background);
   color: var(--gb-foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-body, sans-serif);
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hide scrollbar for mobile carousels */
+/* =========================================
+   CUSTOM ANIMATIONS & KEYFRAMES
+   ========================================= */
+
+/* Shimmer gold line */
+@keyframes shimmer-gold {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Slow pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; filter: blur(40px); }
+  50% { opacity: 0.7; filter: blur(60px); }
+}
+
+/* Float up */
+@keyframes float-up {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Grain texture overlay */
+@keyframes grain-shift {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* Scroll indicator bob */
+@keyframes scroll-bob {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+/* Rotate barber pole */
+@keyframes barber-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Slow Ken Burns zoom */
+@keyframes ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+/* Text reveal mask */
+@keyframes reveal-mask {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* Fade slide up */
+@keyframes fade-slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   UTILITY CLASSES
+   ========================================= */
+
 @layer utilities {
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
@@ -54,5 +138,111 @@ body {
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  
+  /* Animated gold line */
+  .gold-shimmer-line {
+    background: linear-gradient(
+      90deg, 
+      transparent 0%, 
+      var(--gb-gold-dark) 25%, 
+      var(--gb-primary) 50%, 
+      var(--gb-gold-light) 60%, 
+      var(--gb-primary) 75%, 
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-gold 3s ease-in-out infinite;
+  }
+
+  /* Film grain overlay */
+  .grain-overlay::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    animation: grain-shift 8s steps(10) infinite;
+    z-index: 1;
+  }
+
+  /* Parallax depth layers */
+  .parallax-slow { will-change: transform; }
+  .parallax-fast { will-change: transform; }
+
+  /* Gold text gradient */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, var(--gb-gold-dark) 0%, var(--gb-primary) 30%, var(--gb-gold-light) 60%, var(--gb-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gold border glow */
+  .border-gold-glow {
+    border-color: var(--gb-primary);
+    box-shadow: 0 0 15px rgba(198, 155, 69, 0.15), 
+                inset 0 0 15px rgba(198, 155, 69, 0.05);
+  }
+
+  /* Section reveal animation */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* =========================================
+   SELECTION & SCROLLBAR THEMING
+   ========================================= */
+
+::selection {
+  background: var(--gb-primary);
+  color: var(--gb-background);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gb-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gb-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gb-primary);
+}
+
+/* =========================================
+   SMOOTH SCROLL
+   ========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }
