@@ -35,17 +35,14 @@ export default function ProductCatalog() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="flex-1">
             <h2 
-              className="text-4xl md:text-6xl text-gb-text mb-6 tracking-wide flex flex-col items-start gap-1 transition-all duration-1000" 
+              className="text-5xl md:text-7xl text-gb-gold mb-6 drop-shadow-lg transition-all duration-1000 capitalize tracking-wider" 
               style={{ 
-                fontFamily: 'var(--font-tall)',
+                fontFamily: 'var(--font-gothic)',
                 opacity: isVisible ? 1 : 0, 
                 transform: isVisible ? 'translateY(0)' : 'translateY(30px)' 
               }}
             >
-              <span className="uppercase tracking-widest font-bold">Productos</span>
-              <span className="text-gb-gold text-5xl md:text-7xl lowercase drop-shadow-md -mt-4 pr-4" style={{ fontFamily: 'var(--font-script)' }}>
-                premium
-              </span>
+              Productos
             </h2>
             <div 
               className="w-16 h-px bg-gradient-to-r from-gb-gold to-transparent mb-6 transition-all duration-1000"
@@ -56,14 +53,14 @@ export default function ProductCatalog() {
               }}
             />
             <p 
-              className="font-serif text-lg md:text-xl text-gray-400 italic tracking-wider max-w-lg leading-relaxed transition-all duration-1000"
+              className="font-bold text-lg md:text-xl text-white tracking-wider max-w-lg leading-relaxed transition-all duration-1000 drop-shadow-md"
               style={{ 
                 opacity: isVisible ? 1 : 0, 
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transitionDelay: '300ms'
               }}
             >
-              "Extiende la experiencia del estudio. Fórmulas de nivel profesional seleccionadas personalmente por nuestros maestros barberos."
+              Extiende la experiencia del estudio. Fórmulas de nivel profesional seleccionadas personalmente por nuestros maestros barberos.
             </p>
           </div>
           <button 
