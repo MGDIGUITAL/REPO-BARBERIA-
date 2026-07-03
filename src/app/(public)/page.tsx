@@ -2,6 +2,7 @@ import ServiceCatalog from "@/components/public/ServiceCatalog";
 import ProductCatalog from "@/components/public/ProductCatalog";
 import BookingFlow from "@/components/public/BookingFlow";
 import BrandCarousel from "@/components/public/BrandCarousel";
+import ExperienceBreak from "@/components/public/ExperienceBreak";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -120,16 +121,8 @@ export default function LandingPage() {
         <ServiceCatalog />
       </div>
 
-      {/* IMAGE BREAK */}
-      <div className="w-full h-96 my-20 relative">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center bg-fixed opacity-30" />
-        <div className="absolute inset-0 bg-gb-bg/60 mix-blend-multiply" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-widest uppercase text-white/90">
-            Artesanía <span className="text-gb-gold italic font-serif lowercase">&</span> Estilo
-          </h2>
-        </div>
-      </div>
+      {/* EXPERIENCE BREAK */}
+      <ExperienceBreak />
 
       {/* BRAND CAROUSEL */}
       <BrandCarousel />
