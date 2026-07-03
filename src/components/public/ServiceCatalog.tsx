@@ -52,13 +52,25 @@ export default function ServiceCatalog() {
   }, {} as Record<string, typeof SERVICES>);
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
-      {/* ── PREMIUM BACKGROUND (Skill Design) ── */}
-      <div className="absolute inset-0 bg-[#040506] pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('/services-bg.png')] bg-cover bg-center bg-fixed opacity-40 pointer-events-none" />
-      {/* Dark gradient fades to blend with the rest of the site */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#040506] via-transparent to-[#040506] pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#040506]/80 via-transparent to-[#040506]/80 pointer-events-none" />
+    <section ref={sectionRef} className="relative py-32 px-6">
+      {/* ── PREMIUM PARALLAX VIDEO BACKGROUND ── */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="sticky top-0 w-full h-[100svh]">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+            style={{ filter: 'grayscale(60%) contrast(1.2)' }}
+          >
+            <source src="https://res.cloudinary.com/ddqx435i5/video/upload/v1783079630/Barber_trimming_client_s_beard_202607030734_qrs6hk.mp4" type="video/mp4" />
+          </video>
+          {/* Dark gradient fades to blend seamlessly with the rest of the site */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#040506] via-transparent to-[#040506]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040506]/90 via-[#040506]/40 to-[#040506]/90" />
+        </div>
+      </div>
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         
