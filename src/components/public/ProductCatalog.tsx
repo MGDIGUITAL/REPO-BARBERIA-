@@ -40,11 +40,13 @@ export default function ProductCatalog() {
                 </button>
               </div>
 
-              <h3 className="text-lg font-medium text-gb-text mb-1 group-hover:text-gb-gold transition-colors">
+              <h3 className="text-xl md:text-2xl font-bold text-gb-text mb-1 group-hover:text-gb-gold transition-colors" style={{ fontFamily: 'var(--font-tall)' }}>
                 {product.name}
               </h3>
               <p className="text-sm text-gray-500 font-light mb-3 flex-1">{product.desc}</p>
-              <span className="text-lg font-bold text-gb-text">{product.price}</span>
+              <span className="text-2xl font-bold text-gb-text" style={{ fontFamily: 'var(--font-tall)' }}>
+                {product.price}
+              </span>
             </div>
           ))}
         </div>

@@ -106,7 +106,7 @@ export default function ServiceCatalog() {
               {/* Category Title */}
               <div className="flex items-center gap-4 border-b border-white/5 pb-4 mb-6">
                 <span className="text-gb-gold">✦</span>
-                <h3 className="text-2xl text-white font-serif italic tracking-wide">
+                <h3 className="text-4xl text-gb-gold tracking-wide pr-4" style={{ fontFamily: 'var(--font-script)' }}>
                   {category}
                 </h3>
               </div>
@@ -122,15 +122,16 @@ export default function ServiceCatalog() {
                     
                     <div className="relative z-10">
                       <div className="flex justify-between items-start mb-1 gap-4">
-                        <h4 className="text-base md:text-lg font-medium text-white tracking-wide group-hover:text-gb-gold transition-colors duration-300">
+                        <h4 className="text-xl md:text-2xl font-bold text-white tracking-wide group-hover:text-gb-gold transition-colors duration-300" style={{ fontFamily: 'var(--font-tall)' }}>
                           {item.name}
                         </h4>
                         
                         {/* Animated Price */}
                         <div className="relative whitespace-nowrap">
                           <span 
-                            className="text-lg md:text-xl font-bold tracking-wider relative z-10"
+                            className="text-2xl md:text-3xl font-bold tracking-wider relative z-10"
                             style={{ 
+                              fontFamily: 'var(--font-tall)',
                               background: "linear-gradient(to right, #ffffff, #e0e0e0)",
                               WebkitBackgroundClip: "text",
                               WebkitTextFillColor: "transparent"

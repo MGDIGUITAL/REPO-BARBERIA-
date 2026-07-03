@@ -3,6 +3,8 @@ import {
   Montserrat,
   Cormorant_Garamond,
   UnifrakturMaguntia,
+  Playfair_Display,
+  Great_Vibes,
 } from "next/font/google";
 import "./globals.css";
 
@@ -28,6 +30,21 @@ const gothic = UnifrakturMaguntia({
   display: "swap",
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-tall",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const script = Great_Vibes({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Gold Barber Studio — Premium Cuts",
   description:
@@ -43,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${montserrat.variable} ${cormorant.variable} ${gothic.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${cormorant.variable} ${gothic.variable} ${playfair.variable} ${script.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

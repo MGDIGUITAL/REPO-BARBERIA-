@@ -46,6 +46,8 @@
 
   --font-display: var(--font-cormorant);
   --font-gothic: var(--font-gothic);
+  --font-tall: var(--font-tall);
+  --font-script: var(--font-script);
   --font-body: var(--font-montserrat);
   --font-sans: var(--font-montserrat);
   --font-serif: var(--font-cormorant);
