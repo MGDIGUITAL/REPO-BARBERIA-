@@ -44,7 +44,7 @@
   --color-pbs-surface: var(--pbs-surface);
   --color-pbs-border: var(--pbs-border);
 
-  --font-display: var(--font-gothic);
+  --font-display: var(--font-cormorant);
   --font-gothic: var(--font-gothic);
   --font-body: var(--font-montserrat);
   --font-sans: var(--font-montserrat);
@@ -65,7 +65,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display, serif);
-  font-weight: normal;
 }
 
 /* =========================================
