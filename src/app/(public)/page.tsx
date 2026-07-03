@@ -199,11 +199,8 @@ export default function LandingPage() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#040506] to-transparent" />
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-5xl md:text-7xl text-white/90 tracking-wide flex flex-col md:flex-row items-center gap-4 justify-center" style={{ fontFamily: 'var(--font-tall)' }}>
-            <span className="uppercase tracking-widest font-bold">Estilo</span>
-            <span className="text-gb-gold text-6xl md:text-8xl lowercase drop-shadow-lg -mt-4 md:-mt-2 pr-4" style={{ fontFamily: 'var(--font-script)' }}>
-              & experiencia
-            </span>
+          <h2 className="text-5xl md:text-7xl lg:text-8xl text-gb-gold drop-shadow-lg tracking-wider capitalize text-center px-4" style={{ fontFamily: 'var(--font-gothic)' }}>
+            Estilo & Experiencia
           </h2>
         </div>
       </div>
