@@ -86,10 +86,10 @@ export default function ProductCatalog() {
                 transitionDelay: `${500 + idx * 150}ms`
               }}
             >
-              {/* Product Image Placeholder */}
-              <div className="aspect-[4/5] bg-gb-muted mb-6 relative overflow-hidden flex items-center justify-center border border-white/[0.05] group-hover:border-gb-gold/30 transition-colors duration-500">
+              {/* Product Image */}
+              <div className="aspect-[4/5] bg-gb-bg mb-6 relative overflow-hidden flex items-center justify-center border border-white/[0.05] group-hover:border-gb-gold/30 transition-colors duration-500">
+                <img src={product.img} alt={product.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                <span className="text-gray-600 font-serif italic text-sm">Fotografía de Producto</span>
                 
                 {/* Botón flotante al hacer hover */}
                 <button className="absolute bottom-6 left-1/2 -translate-x-1/2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-20 bg-gb-gold text-gb-bg uppercase tracking-widest text-xs font-bold py-3 px-6 w-10/12 shadow-lg">
