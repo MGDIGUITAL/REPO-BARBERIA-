@@ -168,7 +168,7 @@ export default function LandingPage() {
 
       {/* ABOUT BLOCK */}
       <section className="relative w-full py-40 flex items-center justify-center">
-        <div className="absolute inset-0 bg-[url('/about-bg.png')] bg-cover bg-center bg-fixed opacity-40" />
+        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/ddqx435i5/image/upload/v1783082837/6ae626e3-c881-4b7f-a391-11024e49d7e4_k8tvfw.png')] bg-cover bg-center bg-fixed opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#040506] via-transparent to-[#040506]" />
         <div className="absolute inset-0 bg-black/50 mix-blend-multiply" />
         
