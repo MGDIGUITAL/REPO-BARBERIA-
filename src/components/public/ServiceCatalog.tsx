@@ -44,7 +44,7 @@ export default function ServiceCatalog() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
         {Object.entries(groupedServices).map(([category, items]) => (
           <div key={category} className="space-y-8">
-            <h3 className="text-xl text-gb-gold font-serif uppercase tracking-[0.2em] border-b border-gb-muted pb-4">
+            <h3 className="text-2xl text-gb-gold font-gothic uppercase tracking-[0.1em] border-b border-gb-muted pb-4">
               {category}
             </h3>
             
@@ -52,11 +52,11 @@ export default function ServiceCatalog() {
               {items.map((item, idx) => (
                 <div key={idx} className="group relative">
                   <div className="flex justify-between items-baseline mb-2">
-                    <h4 className="text-lg font-medium text-gb-text tracking-wide group-hover:text-gb-gold transition-colors">
+                    <h4 className="text-xl font-gothic text-gb-text tracking-wide group-hover:text-gb-gold transition-colors">
                       {item.name}
                     </h4>
                     <div className="flex-1 border-b border-dotted border-gb-muted mx-4 relative top-[-6px]"></div>
-                    <span className="text-lg font-bold text-gb-text">{item.price}</span>
+                    <span className="text-xl font-gothic text-gb-gold">{item.price}</span>
                   </div>
                   
                   <div className="flex justify-between text-sm text-gray-500 font-light">

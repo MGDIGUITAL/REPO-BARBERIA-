@@ -44,10 +44,11 @@
   --color-pbs-surface: var(--pbs-surface);
   --color-pbs-border: var(--pbs-border);
 
-  --font-display: var(--font-cormorant);
+  --font-display: var(--font-gothic);
   --font-gothic: var(--font-gothic);
   --font-body: var(--font-montserrat);
   --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-cormorant);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -60,6 +61,11 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display, serif);
+  font-weight: normal;
 }
 
 /* =========================================
