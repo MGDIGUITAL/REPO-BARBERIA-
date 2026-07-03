@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  /* =========================================
+     THEME: GOLD BARBER STUDIO (Public Landing)
+     Aesthetic: Premium, Classic, Editorial
+     ========================================= */
+  --gb-background: #090A0B; /* Deep Black */
+  --gb-foreground: #F5F1E8; /* Warm White/Cream */
+  --gb-primary: #C69B45;    /* Classic Gold */
+  --gb-muted: #2A2C30;      /* Subtle border/card */
+
+  /* =========================================
+     THEME: PRO BARBERSHOP SYSTEM (Dashboard)
+     Aesthetic: Clean, Modular, SaaS
+     ========================================= */
+  --pbs-background: #F7F8FA; /* Off-white */
+  --pbs-foreground: #15171A; /* Near Black */
+  --pbs-primary: #FF5A2B;    /* Vermilion Orange */
+  --pbs-surface: #FFFFFF;    /* Pure White for cards */
+  --pbs-border: #E5E7EB;     /* Soft gray */
+}
+
+@theme inline {
+  --color-gb-bg: var(--gb-background);
+  --color-gb-text: var(--gb-foreground);
+  --color-gb-gold: var(--gb-primary);
+  --color-gb-muted: var(--gb-muted);
+
+  --color-pbs-bg: var(--pbs-background);
+  --color-pbs-text: var(--pbs-foreground);
+  --color-pbs-orange: var(--pbs-primary);
+  --color-pbs-surface: var(--pbs-surface);
+  --color-pbs-border: var(--pbs-border);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Default to a generic dark theme to avoid flash, layouts will force colors */
+body {
+  background: var(--gb-background);
+  color: var(--gb-foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide scrollbar for mobile carousels */
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
