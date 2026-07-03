@@ -1,6 +1,7 @@
 import ServiceCatalog from "@/components/public/ServiceCatalog";
 import ProductCatalog from "@/components/public/ProductCatalog";
 import BookingFlow from "@/components/public/BookingFlow";
+import BrandCarousel from "@/components/public/BrandCarousel";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -129,6 +130,9 @@ export default function LandingPage() {
           </h2>
         </div>
       </div>
+
+      {/* BRAND CAROUSEL */}
+      <BrandCarousel />
 
       {/* E-COMMERCE SECTION (Productos) */}
       <div id="boutique" className="pt-20">
