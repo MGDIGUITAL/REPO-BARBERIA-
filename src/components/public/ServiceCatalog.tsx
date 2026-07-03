@@ -54,8 +54,8 @@ export default function ServiceCatalog() {
   return (
     <section ref={sectionRef} className="relative py-32 px-6">
       {/* ── PREMIUM PARALLAX VIDEO BACKGROUND ── */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="sticky top-0 w-full h-[100svh]">
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="sticky top-0 w-full h-[100svh] overflow-hidden">
           <video 
             autoPlay 
             loop 
