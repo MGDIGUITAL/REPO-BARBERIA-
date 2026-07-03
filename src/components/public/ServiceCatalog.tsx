@@ -75,22 +75,44 @@ export default function ServiceCatalog() {
       <div className="max-w-6xl mx-auto w-full relative z-10">
         
         {/* HEADER */}
-        <div 
-          className="mb-20 flex flex-col items-center text-center transition-all duration-1000"
-          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
-        >
-          <span className="text-[10px] uppercase tracking-[0.5em] text-gb-gold/70 mb-4">
+        <div className="mb-20 flex flex-col items-center text-center">
+          <span 
+            className="text-[10px] uppercase tracking-[0.5em] text-gb-gold/70 mb-4 transition-all duration-1000"
+            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
+          >
             ✦ El Menú ✦
           </span>
-          <h2 className="text-4xl md:text-6xl text-white mb-6 tracking-wide flex flex-col md:flex-row items-center gap-2 md:gap-6 justify-center" style={{ fontFamily: 'var(--font-tall)' }}>
+          <h2 
+            className="text-4xl md:text-6xl text-white mb-6 tracking-wide flex flex-col md:flex-row items-center gap-2 md:gap-6 justify-center transition-all duration-1000" 
+            style={{ 
+              fontFamily: 'var(--font-tall)',
+              opacity: isVisible ? 1 : 0, 
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+              transitionDelay: '100ms'
+            }}
+          >
             <span className="uppercase tracking-widest font-bold">Nuestros</span>
             <span className="text-gb-gold text-5xl md:text-7xl lowercase drop-shadow-md -mt-2 md:mt-1 pr-4" style={{ fontFamily: 'var(--font-script)' }}>
               servicios
             </span>
           </h2>
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-gb-gold to-transparent mb-6" />
-          <p className="text-gray-400 font-light tracking-wide max-w-lg text-sm md:text-base leading-relaxed">
-            Diseñado para quienes no comprometen su imagen. Ejecución técnica impecable y productos de nivel mundial.
+          <div 
+            className="w-16 h-px bg-gradient-to-r from-transparent via-gb-gold to-transparent mb-6 transition-all duration-1000" 
+            style={{ 
+              opacity: isVisible ? 1 : 0, 
+              width: isVisible ? '4rem' : '0',
+              transitionDelay: '300ms'
+            }}
+          />
+          <p 
+            className="font-serif text-lg md:text-xl text-gray-300/90 italic tracking-wider max-w-xl mx-auto leading-relaxed transition-all duration-1000"
+            style={{ 
+              opacity: isVisible ? 1 : 0, 
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: '400ms'
+            }}
+          >
+            "Donde la técnica clásica encuentra la sofisticación moderna. Un ritual diseñado exclusivamente para los más exigentes."
           </p>
         </div>
 
