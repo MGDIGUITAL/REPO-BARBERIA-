@@ -218,7 +218,7 @@ export default function LandingPage() {
             loop 
             muted 
             playsInline 
-            className="absolute inset-0 w-full h-full object-cover opacity-20"
+            className="absolute inset-0 w-full h-full object-contain opacity-20"
             style={{ filter: 'grayscale(60%) contrast(1.1)' }}
           >
             <source src="https://res.cloudinary.com/ddqx435i5/video/upload/q_auto,f_auto/Dise%C3%B1o_sin_t%C3%ADtulo_1_d89htb.mp4" type="video/mp4" />
