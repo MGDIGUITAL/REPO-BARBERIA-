@@ -173,9 +173,11 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-black/50 mix-blend-multiply" />
         
         <div className="relative z-10 px-6 max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-serif italic text-gb-gold mb-10 drop-shadow-lg">No es solo un corte, es un ritual.</h2>
-          <p className="text-xl md:text-3xl text-gray-200 font-light leading-relaxed tracking-wide drop-shadow-md">
-            En <span className="text-white font-medium" style={{ fontFamily: 'var(--font-tall)' }}>Gold Barber Studio</span> fusionamos la tradición clásica con técnicas modernas de vanguardia. Cada detalle de nuestro espacio ha sido diseñado para ofrecerte una experiencia de relajación absoluta, donde la calidad del servicio es innegociable.
+          <h2 className="text-3xl md:text-5xl text-gb-gold font-bold tracking-wider mb-10 drop-shadow-lg">
+            No es solo un corte, es un ritual.
+          </h2>
+          <p className="text-lg md:text-2xl text-white font-bold leading-relaxed tracking-wider drop-shadow-md max-w-4xl mx-auto">
+            En Gold Barber Studio fusionamos la tradición clásica con técnicas modernas de vanguardia. Cada detalle de nuestro espacio ha sido diseñado para ofrecerte una experiencia de relajación absoluta, donde la calidad del servicio es innegociable.
           </p>
         </div>
       </section>
