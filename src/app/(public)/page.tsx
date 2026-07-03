@@ -167,11 +167,17 @@ export default function LandingPage() {
       </section>
 
       {/* ABOUT BLOCK */}
-      <section className="py-32 px-6 max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-serif italic text-gb-gold mb-8">No es solo un corte, es un ritual.</h2>
-        <p className="text-lg md:text-2xl text-gray-400 font-light leading-relaxed tracking-wide">
-          En <span className="text-white font-medium">Gold Barber Studio</span> fusionamos la tradición clásica con técnicas modernas de vanguardia. Cada detalle de nuestro espacio ha sido diseñado para ofrecerte una experiencia de relajación absoluta, donde la calidad del servicio es innegociable.
-        </p>
+      <section className="relative w-full py-40 flex items-center justify-center">
+        <div className="absolute inset-0 bg-[url('/about-bg.png')] bg-cover bg-center bg-fixed opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#040506] via-transparent to-[#040506]" />
+        <div className="absolute inset-0 bg-black/50 mix-blend-multiply" />
+        
+        <div className="relative z-10 px-6 max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-serif italic text-gb-gold mb-10 drop-shadow-lg">No es solo un corte, es un ritual.</h2>
+          <p className="text-xl md:text-3xl text-gray-200 font-light leading-relaxed tracking-wide drop-shadow-md">
+            En <span className="text-white font-medium" style={{ fontFamily: 'var(--font-tall)' }}>Gold Barber Studio</span> fusionamos la tradición clásica con técnicas modernas de vanguardia. Cada detalle de nuestro espacio ha sido diseñado para ofrecerte una experiencia de relajación absoluta, donde la calidad del servicio es innegociable.
+          </p>
+        </div>
       </section>
 
       {/* CATALOG SECTION (Servicios) */}
