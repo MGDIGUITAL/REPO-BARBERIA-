@@ -10,27 +10,27 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen bg-gb-bg text-gb-text font-sans selection:bg-gb-gold selection:text-gb-bg">
       
       {/* HEADER / NAVIGATION */}
-      <header className="fixed top-0 w-full z-50 bg-gb-bg/80 backdrop-blur-md border-b border-white/5 transition-all">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <header className="fixed top-0 w-full z-50 bg-transparent transition-all pt-4">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo image replacing text */}
           <a href="#" className="flex items-center">
             <Image
               src="/logo.png"
               alt="Gold Barber Studio"
-              width={56}
-              height={56}
-              className="logo-glow rounded-full object-contain"
+              width={64}
+              height={64}
+              className="logo-glow rounded-full object-contain drop-shadow-lg"
               priority
             />
           </a>
           
-          <nav className="hidden md:flex gap-8 text-sm font-medium tracking-widest uppercase text-gray-400">
-            <a href="#servicios" className="hover:text-gb-gold transition-colors">Servicios</a>
-            <a href="#boutique" className="hover:text-gb-gold transition-colors">Boutique</a>
-            <a href="#reservas" className="hover:text-gb-gold transition-colors">Reservas</a>
+          <nav className="hidden md:flex gap-12 items-center text-white/90">
+            <a href="#servicios" className="text-3xl hover:text-gb-gold transition-colors drop-shadow-lg" style={{ fontFamily: 'var(--font-gothic)' }}>Servicios</a>
+            <a href="#boutique" className="text-3xl hover:text-gb-gold transition-colors drop-shadow-lg" style={{ fontFamily: 'var(--font-gothic)' }}>Boutique</a>
+            <a href="#reservas" className="text-3xl hover:text-gb-gold transition-colors drop-shadow-lg" style={{ fontFamily: 'var(--font-gothic)' }}>Reservas</a>
           </nav>
           
-          <Link href="/dashboard" className="hidden md:flex text-xs border border-white/20 px-4 py-2 uppercase tracking-widest hover:border-gb-gold hover:text-gb-gold transition-all">
+          <Link href="/dashboard" className="hidden md:flex text-sm px-5 py-2 uppercase tracking-[0.2em] hover:text-gb-gold transition-all drop-shadow-md font-light text-white/70">
             Ingreso Staff
           </Link>
         </div>
@@ -168,12 +168,20 @@ export default function LandingPage() {
       </div>
 
       {/* IMAGE BREAK */}
-      <div className="w-full h-96 my-20 relative">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center bg-fixed opacity-30" />
-        <div className="absolute inset-0 bg-gb-bg/60 mix-blend-multiply" />
+      <div className="w-full h-[500px] relative">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center bg-fixed opacity-40" />
+        <div className="absolute inset-0 bg-gb-bg/50 mix-blend-multiply" />
+        
+        {/* Dark gradients on top and bottom to blend smoothly with adjacent black sections */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#040506] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#040506] to-transparent" />
+
         <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-widest uppercase text-white/90">
-            Estilo <span className="text-gb-gold italic font-serif lowercase">&</span> Experiencia
+          <h2 className="text-5xl md:text-7xl text-white/90 tracking-wide flex flex-col md:flex-row items-center gap-4 justify-center" style={{ fontFamily: 'var(--font-tall)' }}>
+            <span className="uppercase tracking-widest font-bold">Estilo</span>
+            <span className="text-gb-gold text-6xl md:text-8xl lowercase drop-shadow-lg -mt-4 md:-mt-2 pr-4" style={{ fontFamily: 'var(--font-script)' }}>
+              & experiencia
+            </span>
           </h2>
         </div>
       </div>
