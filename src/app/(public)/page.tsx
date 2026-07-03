@@ -26,7 +26,7 @@ export default function LandingPage() {
           
           <nav className="hidden md:flex gap-12 items-center text-white/90">
             <a href="#servicios" className="text-3xl hover:text-gb-gold transition-colors drop-shadow-lg" style={{ fontFamily: 'var(--font-gothic)' }}>Servicios</a>
-            <a href="#boutique" className="text-3xl hover:text-gb-gold transition-colors drop-shadow-lg" style={{ fontFamily: 'var(--font-gothic)' }}>Boutique</a>
+            <a href="#productos" className="text-3xl hover:text-gb-gold transition-colors drop-shadow-lg" style={{ fontFamily: 'var(--font-gothic)' }}>Productos</a>
             <a href="#reservas" className="text-3xl hover:text-gb-gold transition-colors drop-shadow-lg" style={{ fontFamily: 'var(--font-gothic)' }}>Reservas</a>
           </nav>
           
@@ -190,7 +190,7 @@ export default function LandingPage() {
       <BrandCarousel />
 
       {/* E-COMMERCE SECTION (Productos) */}
-      <div id="boutique" className="pt-20">
+      <div id="productos" className="pt-20">
         <ProductCatalog />
       </div>
 

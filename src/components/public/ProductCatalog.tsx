@@ -42,7 +42,7 @@ export default function ProductCatalog() {
                 transform: isVisible ? 'translateY(0)' : 'translateY(30px)' 
               }}
             >
-              <span className="uppercase tracking-widest font-bold">Boutique</span>
+              <span className="uppercase tracking-widest font-bold">Productos</span>
               <span className="text-gb-gold text-5xl md:text-7xl lowercase drop-shadow-md -mt-4 pr-4" style={{ fontFamily: 'var(--font-script)' }}>
                 premium
               </span>
