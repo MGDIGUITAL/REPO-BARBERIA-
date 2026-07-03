@@ -126,7 +126,7 @@ export default function LandingPage() {
               opacity: 0,
             }}
           >
-            Estudio Privado de Barbería Profesional. Una experiencia de altísimo nivel donde la precisión técnica y el estilo convergen.
+            Estudio Privado de Barbería Profesional.
           </p>
           
           {/* Buttons animated fade-in */}
