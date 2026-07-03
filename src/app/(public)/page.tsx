@@ -117,17 +117,29 @@ export default function LandingPage() {
             </span>
           </div>
 
-          {/* Paragraph animated fade-in */}
-          <p 
-            className="text-lg md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light tracking-wider leading-relaxed"
-            style={{
-              animation: 'fade-in-up 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-              animationDelay: '1.2s',
-              opacity: 0,
-            }}
-          >
-            Estudio Privado de Barbería Profesional.
-          </p>
+          {/* Paragraph animated letter-by-letter */}
+          <div className="flex flex-wrap justify-center mb-12 max-w-3xl mx-auto text-white font-bold text-lg md:text-2xl tracking-wider leading-relaxed">
+            {"Estudio Privado de Barbería Profesional.".split(" ").map((word, wordIdx, wordsArray) => {
+              const wordOffset = wordIdx * 6; 
+              return (
+                <span key={wordIdx} className={`inline-block whitespace-nowrap ${wordIdx !== wordsArray.length - 1 ? 'mr-2' : ''}`}>
+                  {word.split("").map((char, charIdx) => (
+                    <span 
+                      key={charIdx} 
+                      className="inline-block drop-shadow-md"
+                      style={{
+                        animation: 'fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        animationDelay: `${1.0 + ((wordOffset + charIdx) * 0.03)}s`,
+                        opacity: 0,
+                      }}
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
+              );
+            })}
+          </div>
           
           {/* Buttons animated fade-in */}
           <div 
