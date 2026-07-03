@@ -77,20 +77,27 @@ export default function LandingPage() {
             />
           </div>
 
-          {/* Massive Gothic headline with letter-by-letter reveal */}
-          <h1 className="flex flex-wrap justify-center overflow-hidden mb-2">
-            {"Gold Barber".split("").map((char, i) => (
-              <span
-                key={i}
-                className="font-gothic text-7xl md:text-[10vw] lg:text-[11vw] text-gold-gradient leading-none tracking-tight inline-block drop-shadow-2xl"
-                style={{
-                  animation: 'text-reveal-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                  animationDelay: `${i * 0.08}s`,
-                  opacity: 0,
-                  transform: 'translateY(120%)'
-                }}
-              >
-                {char === " " ? "\u00A0" : char}
+          {/* Massive Gothic headline with letter-by-letter reveal (Word-wrapped to prevent breaking mid-word) */}
+          <h1 className="flex flex-wrap justify-center gap-x-4 md:gap-x-6 overflow-hidden mb-2 px-2">
+            {"Gold Barber".split(" ").map((word, wordIdx) => (
+              <span key={wordIdx} className="flex whitespace-nowrap">
+                {word.split("").map((char, charIdx) => {
+                  const globalIdx = wordIdx * 5 + charIdx;
+                  return (
+                    <span
+                      key={charIdx}
+                      className="font-gothic text-[14vw] sm:text-[10vw] md:text-[9vw] lg:text-[8.5vw] text-gold-gradient leading-none tracking-tight inline-block drop-shadow-2xl"
+                      style={{
+                        animation: 'text-reveal-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        animationDelay: `${globalIdx * 0.08}s`,
+                        opacity: 0,
+                        transform: 'translateY(120%)'
+                      }}
+                    >
+                      {char}
+                    </span>
+                  );
+                })}
               </span>
             ))}
           </h1>
