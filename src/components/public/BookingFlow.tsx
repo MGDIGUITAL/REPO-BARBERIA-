@@ -1,5 +1,6 @@
-import React from 'react';
+"use client";
 
+import React, { useState } from 'react';
 // Generador de los 16 bloques del Plan Maestro (10:00 a 17:30)
 const TIME_BLOCKS = [
   "10:00", "10:30", "11:00", "11:30",
@@ -9,6 +10,35 @@ const TIME_BLOCKS = [
 ];
 
 export default function BookingFlow() {
+  const [selectedDate, setSelectedDate] = useState<number | null>(18); // Default selected date for mockup
+
+  const renderCalendar = () => {
+    const days = [];
+    const emptySlots = 3; // Mock offset
+    for(let i=0; i<emptySlots; i++) days.push(<div key={`empty-${i}`} className="text-center p-2 text-transparent">0</div>);
+    for(let i=1; i<=31; i++) {
+      const isPast = i < 15;
+      const isSelected = selectedDate === i;
+      const isAvailable = !isPast;
+      
+      days.push(
+        <button 
+          key={i} 
+          onClick={() => isAvailable && setSelectedDate(i)}
+          disabled={!isAvailable}
+          className={`text-center p-2 text-sm transition-all duration-300 rounded-sm ${
+            isSelected ? 'bg-gb-gold text-black font-bold shadow-[0_0_10px_rgba(212,175,55,0.4)]' 
+            : isAvailable ? 'text-gray-300 hover:bg-gb-gold/20 hover:text-gb-gold cursor-pointer' 
+            : 'text-gray-700 cursor-not-allowed opacity-50'
+          }`}
+        >
+          {i}
+        </button>
+      );
+    }
+    return days;
+  };
+
   return (
     <section className="py-24 px-6 max-w-4xl mx-auto w-full">
       <div className="text-center mb-16">
@@ -50,8 +80,20 @@ export default function BookingFlow() {
             Fecha y Hora (16 Bloques)
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-1 border border-gb-muted p-6 flex items-center justify-center min-h-[250px]">
-              <span className="text-gray-500 italic font-serif">Componente Calendario (Días habilitados)</span>
+            <div className="lg:col-span-1 border border-gb-muted p-6 bg-black/40">
+              <div className="flex justify-between items-center mb-6">
+                <button className="text-gb-gold hover:text-white transition-colors p-1">&larr;</button>
+                <div className="text-white font-bold tracking-[0.2em] uppercase text-sm">Julio 2026</div>
+                <button className="text-gb-gold hover:text-white transition-colors p-1">&rarr;</button>
+              </div>
+              <div className="grid grid-cols-7 gap-1 mb-4 border-b border-white/5 pb-2">
+                {["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá"].map(d => (
+                  <div key={d} className="text-center text-[10px] text-gb-gold/60 uppercase tracking-widest">{d}</div>
+                ))}
+              </div>
+              <div className="grid grid-cols-7 gap-1 gap-y-2">
+                {renderCalendar()}
+              </div>
             </div>
             <div className="lg:col-span-2">
               <div className="grid grid-cols-4 gap-3">
