@@ -55,14 +55,10 @@ export default function ServiceCatalog() {
     <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
       {/* ── PREMIUM BACKGROUND (Skill Design) ── */}
       <div className="absolute inset-0 bg-[#040506] pointer-events-none" />
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-20"
-        style={{
-          background: "radial-gradient(circle at 50% 0%, #C69B45 0%, transparent 40%), radial-gradient(circle at 0% 100%, #2D1854 0%, transparent 40%)"
-        }}
-      />
-      {/* Noise overlay for texture */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none mix-blend-overlay"></div>
+      <div className="absolute inset-0 bg-[url('/services-bg.png')] bg-cover bg-center bg-fixed opacity-40 pointer-events-none" />
+      {/* Dark gradient fades to blend with the rest of the site */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#040506] via-transparent to-[#040506] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#040506]/80 via-transparent to-[#040506]/80 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         
