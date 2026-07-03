@@ -83,18 +83,15 @@ export default function ServiceCatalog() {
             ✦ El Menú ✦
           </span>
           <h2 
-            className="text-4xl md:text-6xl text-white mb-6 tracking-wide flex flex-col md:flex-row items-center gap-2 md:gap-6 justify-center transition-all duration-1000" 
+            className="text-5xl md:text-7xl text-gb-gold mb-6 drop-shadow-lg transition-all duration-1000 capitalize tracking-wider flex flex-col md:flex-row items-center justify-center gap-4" 
             style={{ 
-              fontFamily: 'var(--font-tall)',
+              fontFamily: 'var(--font-gothic)',
               opacity: isVisible ? 1 : 0, 
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
               transitionDelay: '100ms'
             }}
           >
-            <span className="uppercase tracking-widest font-bold">Nuestros</span>
-            <span className="text-gb-gold text-5xl md:text-7xl lowercase drop-shadow-md -mt-2 md:mt-1 pr-4" style={{ fontFamily: 'var(--font-script)' }}>
-              servicios
-            </span>
+            Nuestros Servicios
           </h2>
           <div 
             className="w-16 h-px bg-gradient-to-r from-transparent via-gb-gold to-transparent mb-6 transition-all duration-1000" 
@@ -105,14 +102,14 @@ export default function ServiceCatalog() {
             }}
           />
           <p 
-            className="font-serif text-lg md:text-xl text-gray-300/90 italic tracking-wider max-w-xl mx-auto leading-relaxed transition-all duration-1000"
+            className="font-bold text-lg md:text-xl text-white tracking-wider max-w-xl mx-auto leading-relaxed transition-all duration-1000 drop-shadow-md"
             style={{ 
               opacity: isVisible ? 1 : 0, 
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
               transitionDelay: '400ms'
             }}
           >
-            "Donde la técnica clásica encuentra la sofisticación moderna. Un ritual diseñado exclusivamente para los más exigentes."
+            Donde la técnica clásica encuentra la sofisticación moderna. Un ritual diseñado exclusivamente para los más exigentes.
           </p>
         </div>
 

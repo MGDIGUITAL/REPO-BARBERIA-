@@ -143,26 +143,28 @@ export default function LandingPage() {
           
           {/* Buttons animated fade-in */}
           <div 
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full z-20 pb-16"
             style={{
               animation: 'fade-in-up 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
               animationDelay: '1.5s',
               opacity: 0,
             }}
           >
-            <a href="#reservas" className="px-10 py-4 bg-gb-gold text-gb-bg font-bold uppercase tracking-[0.2em] text-sm hover:bg-white transition-colors w-full sm:w-auto text-center">
-              Agendar Cita
+            <a href="#reservas" className="relative group px-10 py-4 bg-gb-gold text-gb-bg font-bold uppercase tracking-[0.2em] text-sm transition-all duration-500 w-full sm:w-auto text-center overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] hover:-translate-y-1">
+              <span className="relative z-10 group-hover:text-black transition-colors duration-300">Agendar Cita</span>
+              <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             </a>
-            <a href="#servicios" className="px-10 py-4 border border-gb-muted text-gb-text font-bold uppercase tracking-[0.2em] text-sm hover:border-gb-gold hover:text-gb-gold transition-colors w-full sm:w-auto text-center">
-              Ver Servicios
+            <a href="#servicios" className="relative group px-10 py-4 border border-gb-gold/30 bg-black/40 backdrop-blur-md text-white font-bold uppercase tracking-[0.2em] text-sm hover:border-gb-gold transition-all duration-500 w-full sm:w-auto text-center hover:-translate-y-1">
+              <span className="relative z-10 group-hover:text-gb-gold transition-colors duration-300">Ver Servicios</span>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.15)_0%,transparent_100%)] transition-opacity duration-500" />
             </a>
           </div>
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-pulse">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-gb-gold">Scroll</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-gb-gold to-transparent"></div>
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-30 animate-bounce">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gb-gold font-bold drop-shadow-md">Scroll</span>
+          <div className="w-[2px] h-12 bg-gradient-to-b from-gb-gold via-gb-gold/50 to-transparent"></div>
         </div>
       </section>
 
@@ -174,10 +176,10 @@ export default function LandingPage() {
         
         <div className="relative z-10 px-6 max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl text-gb-gold font-bold tracking-wider mb-10 drop-shadow-lg">
-            No es solo un corte, es un ritual.
+            Precisión. Carácter. Estilo.
           </h2>
           <p className="text-lg md:text-2xl text-white font-bold leading-relaxed tracking-wider drop-shadow-md max-w-4xl mx-auto">
-            En Gold Barber Studio fusionamos la tradición clásica con técnicas modernas de vanguardia. Cada detalle de nuestro espacio ha sido diseñado para ofrecerte una experiencia de relajación absoluta, donde la calidad del servicio es innegociable.
+            Olvídate de los cortes en serie. En Gold Barber Studio nos enfocamos en el oficio real: técnica milimétrica, estudio de tu perfil y productos de nivel mundial. Un trabajo honesto y detallado para quienes exigen la mejor versión de sí mismos.
           </p>
         </div>
       </section>
